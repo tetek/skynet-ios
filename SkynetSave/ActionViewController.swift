@@ -64,44 +64,42 @@ class ActionViewController: UIViewController {
     }
 
     @IBAction func cancel() {
-        // Return any edited content to the host app.
-        // This template doesn't do anything, so we just echo the passed in items.
-//        self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
-//        self.extensionContext.c
-//        Error
         self.extensionContext?.cancelRequest(withError: ErrorType.canceled)
     }
+    
     @IBAction func save() {
         // Return any edited content to the host app.
         // This template doesn't do anything, so we just echo the passed in items.
         if let url = files.first, let data = try? Data(contentsOf: url) {
-            let alert = UIAlertController(title: "Uploading..", message: "", preferredStyle: .alert)
-            alert.addActivityIndicator()
-            let action = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
-                    self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
-            });
-            alert.addAction(action)
-            self.show(alert, sender: nil)
+//            let alert = UIAlertController(title: "Uploading..", message: "", preferredStyle: .alert)
+//            alert.addActivityIndicator()
+//            let action = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+//                    self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
+//            });
+//            alert.addAction(action)
+//            self.show(alert, sender: nil)
             
             let _ = Skynet().upload(data: data, filename: url.lastPathComponent) { (success, skylink) in
                 if success {
-                    alert.dismiss(animated: false) {
-                        let alert = UIAlertController(title: "Ready!", message: "", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Copy skylink", style: .default, handler: { (action) in
-                            let pasteboard = UIPasteboard.general
-                            pasteboard.string = Skynet().portal + skylink
-                                self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
-                        }))
-
-                        self.show(alert, sender: nil)
-                    }
+                    print("YEAH \(skylink)")
+//                    alert.dismiss(animated: false) {
+//                        let alert = UIAlertController(title: "Ready!", message: "", preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title: "Copy skylink", style: .default, handler: { (action) in
+//                            let pasteboard = UIPasteboard.general
+//                            pasteboard.string = Skynet().portal + skylink
+//                                self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
+//                        }))
+//
+//                        self.show(alert, sender: nil)
+//                    }
                     
 //                    self.present(alert, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
                 }
                 else {
-                    self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
+//                    self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
                 }
             }
+            self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
         }
             
         
@@ -111,23 +109,16 @@ class ActionViewController: UIViewController {
 
 extension ActionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if let item = self.extensionContext!.inputItems.first as? NSExtensionItem, let att = item.attachments{
-//            return att.count
-//        }
         return files.count
     }
        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Reuse")
         cell.textLabel?.text = files[indexPath.row].lastPathComponent
-        if let item = self.extensionContext!.inputItems.first as? NSExtensionItem, let att = item.attachments{
-            
-//            cell.detailTextLabel?.text =
-        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Selected files"
+        return section == 0 ? "Selected files" : ""
     }
 }

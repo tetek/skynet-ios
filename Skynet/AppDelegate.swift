@@ -8,18 +8,26 @@
 
 import UIKit
 import Alamofire
+var skynet: Skynet?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-//        Skynet().upload(data: "Hello elo".data(using: .utf8)!)
-        
-        
+//        Skynet().upload(data: "Hello elo".data(using: .utf8)!) { (s, sk) in
+//            print("eki")
+//        }
         return true
     }
-
+    
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+        skynet = Skynet()
+        skynet?.resumeSession(id: identifier, completionHandler: completionHandler)
+//        DispatchQueue.main.async {
+////           completionHandler()
+//        }
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

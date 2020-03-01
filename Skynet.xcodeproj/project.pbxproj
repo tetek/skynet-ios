@@ -13,7 +13,62 @@
 		7D7BE166240B0E600079007C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D7BE165240B0E600079007C /* Assets.xcassets */; };
 		7D7BE169240B0E600079007C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D7BE168240B0E600079007C /* Preview Assets.xcassets */; };
 		7D7BE16C240B0E600079007C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D7BE16A240B0E600079007C /* LaunchScreen.storyboard */; };
+		7D7BE175240B129C0079007C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7BE173240B0FD80079007C /* Alamofire.framework */; };
+		7D7BE176240B129C0079007C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7BE173240B0FD80079007C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D7BE196240B295F0079007C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D7BE195240B295F0079007C /* Media.xcassets */; };
+		7D7BE198240B295F0079007C /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE197240B295F0079007C /* ActionViewController.swift */; };
+		7D7BE19B240B295F0079007C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D7BE199240B295F0079007C /* MainInterface.storyboard */; };
+		7D7BE19F240B295F0079007C /* SkynetSave.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7D7BE193240B295F0079007C /* SkynetSave.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7D7BE1B7240B3D350079007C /* Skynet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE17A240B16D30079007C /* Skynet.swift */; };
+		7D7BE1BA240B3D620079007C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7BE1B8240B3D560079007C /* Alamofire.framework */; };
+		7D7BE1BB240B3D620079007C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7BE1B8240B3D560079007C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D7BE19D240B295F0079007C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D7BE154240B0E5E0079007C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D7BE192240B295F0079007C;
+			remoteInfo = SkynetSave;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D7BE177240B129C0079007C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7D7BE176240B129C0079007C /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7BE18E240B26EB0079007C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7D7BE19F240B295F0079007C /* SkynetSave.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7BE1BC240B3D620079007C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7D7BE1BB240B3D620079007C /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D7BE15C240B0E5E0079007C /* Skynet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skynet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +79,14 @@
 		7D7BE168240B0E600079007C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7D7BE16B240B0E600079007C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D7BE16D240B0E600079007C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D7BE173240B0FD80079007C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		7D7BE17A240B16D30079007C /* Skynet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skynet.swift; sourceTree = "<group>"; };
+		7D7BE193240B295F0079007C /* SkynetSave.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SkynetSave.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7BE195240B295F0079007C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		7D7BE197240B295F0079007C /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		7D7BE19A240B295F0079007C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		7D7BE19C240B295F0079007C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D7BE1B8240B3D560079007C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +94,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D7BE175240B129C0079007C /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7BE190240B295F0079007C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7BE1BA240B3D620079007C /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				7D7BE15E240B0E5E0079007C /* Skynet */,
+				7D7BE194240B295F0079007C /* SkynetSave */,
 				7D7BE15D240B0E5E0079007C /* Products */,
+				7D7BE1B9240B3D620079007C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				7D7BE15C240B0E5E0079007C /* Skynet.app */,
+				7D7BE193240B295F0079007C /* SkynetSave.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +131,7 @@
 		7D7BE15E240B0E5E0079007C /* Skynet */ = {
 			isa = PBXGroup;
 			children = (
+				7D7BE173240B0FD80079007C /* Alamofire.framework */,
 				7D7BE15F240B0E5E0079007C /* AppDelegate.swift */,
 				7D7BE161240B0E5E0079007C /* SceneDelegate.swift */,
 				7D7BE163240B0E5E0079007C /* ContentView.swift */,
@@ -75,6 +151,26 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7D7BE194240B295F0079007C /* SkynetSave */ = {
+			isa = PBXGroup;
+			children = (
+				7D7BE1B8240B3D560079007C /* Alamofire.framework */,
+				7D7BE17A240B16D30079007C /* Skynet.swift */,
+				7D7BE195240B295F0079007C /* Media.xcassets */,
+				7D7BE197240B295F0079007C /* ActionViewController.swift */,
+				7D7BE199240B295F0079007C /* MainInterface.storyboard */,
+				7D7BE19C240B295F0079007C /* Info.plist */,
+			);
+			path = SkynetSave;
+			sourceTree = "<group>";
+		};
+		7D7BE1B9240B3D620079007C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,15 +181,36 @@
 				7D7BE158240B0E5E0079007C /* Sources */,
 				7D7BE159240B0E5E0079007C /* Frameworks */,
 				7D7BE15A240B0E5E0079007C /* Resources */,
+				7D7BE177240B129C0079007C /* Embed Frameworks */,
+				7D7BE18E240B26EB0079007C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7D7BE19E240B295F0079007C /* PBXTargetDependency */,
 			);
 			name = Skynet;
 			productName = Skynet;
 			productReference = 7D7BE15C240B0E5E0079007C /* Skynet.app */;
 			productType = "com.apple.product-type.application";
+		};
+		7D7BE192240B295F0079007C /* SkynetSave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D7BE1A0240B295F0079007C /* Build configuration list for PBXNativeTarget "SkynetSave" */;
+			buildPhases = (
+				7D7BE18F240B295F0079007C /* Sources */,
+				7D7BE190240B295F0079007C /* Frameworks */,
+				7D7BE191240B295F0079007C /* Resources */,
+				7D7BE1BC240B3D620079007C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkynetSave;
+			productName = SkynetSave;
+			productReference = 7D7BE193240B295F0079007C /* SkynetSave.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -106,6 +223,9 @@
 				ORGANIZATIONNAME = "Wojciech Mandrysz";
 				TargetAttributes = {
 					7D7BE15B240B0E5E0079007C = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					7D7BE192240B295F0079007C = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -124,6 +244,7 @@
 			projectRoot = "";
 			targets = (
 				7D7BE15B240B0E5E0079007C /* Skynet */,
+				7D7BE192240B295F0079007C /* SkynetSave */,
 			);
 		};
 /* End PBXProject section */
@@ -136,6 +257,15 @@
 				7D7BE16C240B0E600079007C /* LaunchScreen.storyboard in Resources */,
 				7D7BE169240B0E600079007C /* Preview Assets.xcassets in Resources */,
 				7D7BE166240B0E600079007C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7BE191240B295F0079007C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7BE196240B295F0079007C /* Media.xcassets in Resources */,
+				7D7BE19B240B295F0079007C /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +282,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7D7BE18F240B295F0079007C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7BE198240B295F0079007C /* ActionViewController.swift in Sources */,
+				7D7BE1B7240B3D350079007C /* Skynet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D7BE19E240B295F0079007C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D7BE192240B295F0079007C /* SkynetSave */;
+			targetProxy = 7D7BE19D240B295F0079007C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7D7BE16A240B0E600079007C /* LaunchScreen.storyboard */ = {
@@ -161,6 +308,14 @@
 				7D7BE16B240B0E600079007C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7D7BE199240B295F0079007C /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D7BE19A240B295F0079007C /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -283,10 +438,16 @@
 		7D7BE171240B0E600079007C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Skynet/Preview Content\"";
+				DEVELOPMENT_TEAM = LVE8644388;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Skynet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,10 +463,16 @@
 		7D7BE172240B0E600079007C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Skynet/Preview Content\"";
+				DEVELOPMENT_TEAM = LVE8644388;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Skynet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -313,6 +480,52 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = binarka.pl.Skynet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7D7BE1A1240B295F0079007C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LVE8644388;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SkynetSave",
+				);
+				INFOPLIST_FILE = SkynetSave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = binarka.pl.Skynet.SkynetSave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D7BE1A2240B295F0079007C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LVE8644388;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SkynetSave",
+				);
+				INFOPLIST_FILE = SkynetSave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = binarka.pl.Skynet.SkynetSave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -335,6 +548,15 @@
 			buildConfigurations = (
 				7D7BE171240B0E600079007C /* Debug */,
 				7D7BE172240B0E600079007C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D7BE1A0240B295F0079007C /* Build configuration list for PBXNativeTarget "SkynetSave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7BE1A1240B295F0079007C /* Debug */,
+				7D7BE1A2240B295F0079007C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

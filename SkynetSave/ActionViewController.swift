@@ -38,10 +38,12 @@ extension UIAlertController {
 class ActionViewController: UIViewController {
 //    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var currentPortal: UILabel!
+    
     var files: [URL] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        currentPortal.text = Manager.currentPortal.host
         for item in extensionContext!.inputItems as! [NSExtensionItem] {
             for provider in item.attachments! {
                 if provider.hasItemConformingToTypeIdentifier(kUTTypeImage as String) {
@@ -65,7 +67,7 @@ class ActionViewController: UIViewController {
     @IBAction func save() {        
         for url in files {
             if let data = try? Data(contentsOf: url) {
-                Skynet().uploadInBackground(data: data, filename: url.lastPathComponent)
+                Skynet(portal: Manager.currentPortal).uploadInBackground(data: data, filename: url.lastPathComponent)
             }
         }
         extensionContext!.completeRequest(returningItems: extensionContext!.inputItems, completionHandler: nil)

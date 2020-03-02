@@ -22,35 +22,43 @@ struct SafariView: UIViewControllerRepresentable {
 // Row
 struct SkylinkView: View {
     let skylink: Skylink
+    @State var copied: Bool = false
     @State var showSafari = false
+
     var body: some View {
         HStack(alignment: .top, spacing: CGFloat(3)) {
             VStack(alignment: .leading, spacing: CGFloat(3)) {
                 Text(skylink.filename).font(.headline)
-                Text("Uploaded:" + skylink.timestamp.timeAgo()).font(.subheadline).foregroundColor(.gray)
+                Text(skylink.timestamp.timeAgo() + " via " + skylink.portalName).font(.subheadline).foregroundColor(.gray)
             }
-            .onTapGesture {
-                self.showSafari = true
-            }
-            Spacer()
-            Button(action: {
-                print("Button action")
-                let pb = UIPasteboard.general
-                pb.string = "https://siasky.net/\(self.skylink.link)"
 
-            }) {
-                Text("Copy")
+            Spacer()
+            if copied {
+                Text("Copied!")
                     .foregroundColor(.green)
                     .padding(6.0)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .stroke(lineWidth: 1.0)
-                            .foregroundColor(.green)
-                    )
+                    .transition(.slide)
             }
         }
+        .onTapGesture {
+            self.showSafari = true
+        }
+        .onLongPressGesture {
+            withAnimation {
+                self.copied.toggle()
+            }
+            Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { _ in
+                withAnimation {
+                    self.copied.toggle()
+                }
+            }
+
+            print("Button action")
+            let pb = UIPasteboard.general
+            pb.string = Manager.currentPortal.downloadURL(skylink: self.skylink.link).absoluteString
+        }
         .sheet(isPresented: $showSafari) {
-            SafariView(url: URL(string: "https://siasky.net/\(self.skylink.link)")!)
+            SafariView(url: Manager.currentPortal.downloadURL(skylink: self.skylink.link))
         }
     }
 }
@@ -58,6 +66,7 @@ struct SkylinkView: View {
 // List
 struct SkylinksView: View {
     @State var skylinks: [Skylink] = Manager.load()
+
     var body: some View {
         NavigationView {
             List(skylinks) { skylink in
@@ -69,7 +78,7 @@ struct SkylinksView: View {
                     .font(.title)
                     .foregroundColor(.green)
             }, trailing:
-            NavigationLink(destination: SkylinksView()) {
+            NavigationLink(destination: PortalsView()) {
                 Text("Portals")
             }
             )

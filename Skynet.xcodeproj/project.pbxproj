@@ -30,6 +30,7 @@
 		7DEB68F0240C22FF008DBAC8 /* Skynet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE17A240B16D30079007C /* Skynet.swift */; };
 		7DEB68F1240C2329008DBAC8 /* Skynet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE17A240B16D30079007C /* Skynet.swift */; };
 		7DED8086240D212F00CC4F4B /* LocalizedTimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DED8085240D212F00CC4F4B /* LocalizedTimeAgo.swift */; };
+		7DEFE96E240D8973007444D4 /* PortalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEFE96D240D8973007444D4 /* PortalsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		7DEB68EC240C1602008DBAC8 /* Skynet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Skynet.entitlements; sourceTree = "<group>"; };
 		7DEB68EE240C17BE008DBAC8 /* SkynetSave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkynetSave.entitlements; sourceTree = "<group>"; };
 		7DED8085240D212F00CC4F4B /* LocalizedTimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTimeAgo.swift; sourceTree = "<group>"; };
+		7DEFE96D240D8973007444D4 /* PortalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				7DEB68E9240C1140008DBAC8 /* SkylinksView.swift */,
+				7DEFE96D240D8973007444D4 /* PortalsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				7DEB68EA240C1140008DBAC8 /* SkylinksView.swift in Sources */,
 				7DB38564240C7C0A00F1E89B /* Manager.swift in Sources */,
 				7D7BE162240B0E5E0079007C /* SceneDelegate.swift in Sources */,
+				7DEFE96E240D8973007444D4 /* PortalsView.swift in Sources */,
 				7DED8086240D212F00CC4F4B /* LocalizedTimeAgo.swift in Sources */,
 				7DB3855E240C783F00F1E89B /* Skylink.swift in Sources */,
 			);

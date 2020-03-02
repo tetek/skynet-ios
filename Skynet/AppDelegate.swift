@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Skynet().upload(data: "Hello elo".data(using: .utf8)!) { (s, sk) in
 //            print("eki")
 //        }
-//        Manager.add(skylink: Skylink(link: "HEJA", filename: "kurwo"))
+//        Manager.add(skylink: Skylink(link: "HEJA", filename: "kurwo"))        
         UNUserNotificationCenter.current().requestAuthorization(options: UNAuthorizationOptions.alert) { (success, error) in
             
         }
@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
-        skynet = Skynet()
+        skynet = Skynet(portal: Manager.currentPortal)
         skynet?.resumeSession(id: identifier, completionHandler: completionHandler)
 //        DispatchQueue.main.async {
 ////           completionHandler()

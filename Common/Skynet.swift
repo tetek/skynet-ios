@@ -38,10 +38,10 @@ class Skynet : NSObject {
     }
 
 
-    func upload(data: Data, filename: String? = nil, callback: @escaping (Bool, String) -> ()) -> Bool {
+    func uploadInBackground(data: Data, filename: String? = nil) {
         let uuid = UUID().uuidString
         guard let url = URL(string: portal + uploadPath + uuid) else {
-            return false
+            return
         }
         let (fileURL, contentType) = tempFile(data: data, filename: filename)
         
@@ -52,13 +52,12 @@ class Skynet : NSObject {
         
         let task = session.uploadTask(with: request, fromFile: fileURL)
         task.resume()
-        return true
-        
-
     }
+    
     func tempFile(data: Data, filename: String?) -> (URL, String) {
         let multipartFormData = MultipartFormData(fileManager: .default, boundary: "boundry")
         multipartFormData.append(data, withName: "file", fileName: filename ?? "No name")
+        
         let fileManager = FileManager.default
         let tempDirectoryURL = fileManager.temporaryDirectory
         let directoryURL = tempDirectoryURL.appendingPathComponent("org.alamofire.manager/multipart.form.data")
@@ -129,7 +128,7 @@ extension Skynet : URLSessionTaskDelegate, URLSessionDataDelegate {
             
             
             DispatchQueue.main.async {
-                Manager.add(skylink: Skylink(link: skylink, filename: n))
+                Manager.add(skylink: Skylink(link: skylink, filename: n, timestamp: Date()))
                 self.finito(skylink: skylink)
             }
         }

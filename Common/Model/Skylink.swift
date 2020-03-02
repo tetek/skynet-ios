@@ -12,17 +12,17 @@ import SwiftUI
 struct Skylink: Identifiable, Codable {
     let link: String
     let filename: String
-    let timestamp: Date = Date()
+    let timestamp: Date
     var id: String {
         get {
             return link
         }
     }
-//    init(link: String, filename: String) {
-//        self.link = link
-//        self.filename = filename
-//        self.timestamp = Date()
-//    }
+    init(link: String, filename: String, timestamp: Date) {
+        self.link = link
+        self.filename = filename
+        self.timestamp = timestamp
+    }
     
 }
 

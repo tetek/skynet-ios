@@ -29,6 +29,7 @@
 		7DEB68EA240C1140008DBAC8 /* SkylinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB68E9240C1140008DBAC8 /* SkylinksView.swift */; };
 		7DEB68F0240C22FF008DBAC8 /* Skynet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE17A240B16D30079007C /* Skynet.swift */; };
 		7DEB68F1240C2329008DBAC8 /* Skynet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE17A240B16D30079007C /* Skynet.swift */; };
+		7DED8086240D212F00CC4F4B /* LocalizedTimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DED8085240D212F00CC4F4B /* LocalizedTimeAgo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		7DEB68E9240C1140008DBAC8 /* SkylinksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkylinksView.swift; sourceTree = "<group>"; };
 		7DEB68EC240C1602008DBAC8 /* Skynet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Skynet.entitlements; sourceTree = "<group>"; };
 		7DEB68EE240C17BE008DBAC8 /* SkynetSave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkynetSave.entitlements; sourceTree = "<group>"; };
+		7DED8085240D212F00CC4F4B /* LocalizedTimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTimeAgo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		7D7BE15E240B0E5E0079007C /* Skynet */ = {
 			isa = PBXGroup;
 			children = (
+				7DED8084240D211F00CC4F4B /* Helpers */,
 				7DB38563240C7C0A00F1E89B /* Manager.swift */,
 				7DB38560240C79B200F1E89B /* Views */,
 				7D7BE15F240B0E5E0079007C /* AppDelegate.swift */,
@@ -208,6 +211,14 @@
 				7DB38561240C7AE200F1E89B /* Model */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		7DED8084240D211F00CC4F4B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7DED8085240D212F00CC4F4B /* LocalizedTimeAgo.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +332,7 @@
 				7DEB68EA240C1140008DBAC8 /* SkylinksView.swift in Sources */,
 				7DB38564240C7C0A00F1E89B /* Manager.swift in Sources */,
 				7D7BE162240B0E5E0079007C /* SceneDelegate.swift in Sources */,
+				7DED8086240D212F00CC4F4B /* LocalizedTimeAgo.swift in Sources */,
 				7DB3855E240C783F00F1E89B /* Skylink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +548,7 @@
 		7D7BE1A1240B295F0079007C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SkynetSave/SkynetSave.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LVE8644388;
@@ -561,6 +574,7 @@
 		7D7BE1A2240B295F0079007C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SkynetSave/SkynetSave.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LVE8644388;

@@ -37,11 +37,7 @@ class Skynet : NSObject {
         }
     }
 
-//    init() {
-//
-//    }
-//
-    
+
     func upload(data: Data, filename: String? = nil, callback: @escaping (Bool, String) -> ()) -> Bool {
         let uuid = UUID().uuidString
         guard let url = URL(string: portal + uploadPath + uuid) else {
@@ -52,8 +48,9 @@ class Skynet : NSObject {
         let fileManager = FileManager.default
         let tempDirectoryURL = fileManager.temporaryDirectory
         let directoryURL = tempDirectoryURL.appendingPathComponent("org.alamofire.manager/multipart.form.data")
-        let fileName = UUID().uuidString
-        let fileURL = directoryURL.appendingPathComponent(fileName)
+        
+        let fm = UUID().uuidString
+        let fileURL = directoryURL.appendingPathComponent(fm)
 
         try? fileManager.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
 
@@ -66,45 +63,14 @@ class Skynet : NSObject {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.setValue(filename ?? uuid, forHTTPHeaderField: "filename")
         request.setValue(multipartFormData.contentType, forHTTPHeaderField: "Content-Type")
         
         let task = session.uploadTask(with: request, fromFile: fileURL)
         task.resume()
         return true
         
-        AF.upload(multipartFormData: multipartFormData, to: url)
-        
-//        session.upload(multipartFormData: { (multipartFormData) in
-//            multipartFormData.append(data, withName: "file", fileName: filename ?? uuid)
-//            }, to: url)
-            .uploadProgress { progress in
-                print("Upload Progress: \(progress.fractionCompleted)")
-            }.responseJSON { (response) in
-                debugPrint(response)
-                switch response.result {
-                case .success(let JSON):
-                    print("Success with JSON: \(JSON)")
 
-                    let response = JSON as! NSDictionary
-
-                    //example if there is an id
-                    if let skylink = response["skylink"] as? String {
-                        print(skylink)
-                        callback(true, skylink)
-//                        self.download(skylink: skylink)
-                    }
-                    else {
-                        callback(false, "No skylink in JSON")
-                    }
-                    
-                case .failure(let error):
-                    print("Request failed with error: \(error)")
-                    callback(false, "Failure")
-                }
-                
-            }
-        
-        return true
     }
     func download(skylink: String) -> Void {
         AF.download(portal + skylink).responseData { response in
@@ -139,27 +105,29 @@ class Skynet : NSObject {
 }
 
 extension Skynet : URLSessionTaskDelegate, URLSessionDataDelegate {
-    func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
-        debugPrint(task)
-        print(totalBytesSent/totalBytesExpectedToSend)
-        
-    }
+
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        
-        debugPrint(task.response)
-        debugPrint(error)
         let json = try? JSONSerialization.jsonObject(with: buffer as Data, options: []) as? [String : Any]
         debugPrint(json)
+//        debugPrint(task.response)
+//        debugPrint(task.response?.suggestedFilename)
+//        debugPrint(task.response as? HTTPURLResponse)
+        debugPrint(task.originalRequest?.allHTTPHeaderFields)
+
         if let skylink =  json?["skylink"] as? String {
             let pasteboard = UIPasteboard.general
             pasteboard.string = skylink
-//            DispatchQueue.main.async {
-//                self.finito(skylink: skylink)
-//            }
+            var n = ""
+            if let name = task.originalRequest?.allHTTPHeaderFields?["filename"] {
+                n = name
+            }
+            DispatchQueue.main.async {
+                Manager.add(skylink: Skylink(link: skylink, filename: n))
+                self.finito(skylink: skylink)
+            }
         }
     }
     func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-        print("end of events, nice \(session.configuration.identifier)")
         session.invalidateAndCancel()
          DispatchQueue.main.async {
             self.completion?()

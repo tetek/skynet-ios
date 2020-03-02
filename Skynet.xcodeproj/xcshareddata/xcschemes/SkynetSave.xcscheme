@@ -59,8 +59,8 @@
       launchAutomaticallySubstyle = "2">
       <RemoteRunnable
          runnableDebuggingMode = "0"
-         BundleIdentifier = "binarka.pl.Skynet"
-         RemotePath = "/var/containers/Bundle/Application/43E25189-8A34-4B1C-95C6-23A838444484/Skynet.app">
+         BundleIdentifier = "tech.sia.skynet"
+         RemotePath = "/var/containers/Bundle/Application/506E055D-64BC-41EE-80E3-518AD2F50933/Skynet.app">
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference

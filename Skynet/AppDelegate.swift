@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Skynet().upload(data: "Hello elo".data(using: .utf8)!) { (s, sk) in
 //            print("eki")
 //        }
+//        Manager.add(skylink: Skylink(link: "HEJA", filename: "kurwo"))
+        UNUserNotificationCenter.current().requestAuthorization(options: UNAuthorizationOptions.alert) { (success, error) in
+            
+        }
         return true
     }
     

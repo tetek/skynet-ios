@@ -43,8 +43,22 @@ class Skynet : NSObject {
         guard let url = URL(string: portal + uploadPath + uuid) else {
             return false
         }
+        let (fileURL, contentType) = tempFile(data: data, filename: filename)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue(filename ?? uuid, forHTTPHeaderField: "filename")
+        request.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        
+        let task = session.uploadTask(with: request, fromFile: fileURL)
+        task.resume()
+        return true
+        
+
+    }
+    func tempFile(data: Data, filename: String?) -> (URL, String) {
         let multipartFormData = MultipartFormData(fileManager: .default, boundary: "boundry")
-        multipartFormData.append(data, withName: "file", fileName: filename ?? uuid)
+        multipartFormData.append(data, withName: "file", fileName: filename ?? "No name")
         let fileManager = FileManager.default
         let tempDirectoryURL = fileManager.temporaryDirectory
         let directoryURL = tempDirectoryURL.appendingPathComponent("org.alamofire.manager/multipart.form.data")
@@ -60,18 +74,9 @@ class Skynet : NSObject {
             // Cleanup after attempted write if it fails.
             try? fileManager.removeItem(at: fileURL)
         }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue(filename ?? uuid, forHTTPHeaderField: "filename")
-        request.setValue(multipartFormData.contentType, forHTTPHeaderField: "Content-Type")
-        
-        let task = session.uploadTask(with: request, fromFile: fileURL)
-        task.resume()
-        return true
-        
-
+        return (fileURL, multipartFormData.contentType)
     }
+    
     func download(skylink: String) -> Void {
         AF.download(portal + skylink).responseData { response in
             debugPrint(response)

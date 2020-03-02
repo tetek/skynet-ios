@@ -18,7 +18,18 @@ struct SkylinkView: View {
                 Text(skylink.filename).font(.headline)
                 Text(skylink.link).font(.subheadline)
             }
-            Text("Copy").foregroundColor(.green)
+            Button(action: {
+                print("Button action")
+            }) {
+                Text("Copy")
+                    .foregroundColor(.green)
+                    .padding(6.0)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(lineWidth: 1.0)
+                            .foregroundColor(.green)
+                    )
+            }
         }
         
     }

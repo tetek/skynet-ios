@@ -126,6 +126,8 @@ extension Skynet : URLSessionTaskDelegate, URLSessionDataDelegate {
             if let name = task.originalRequest?.allHTTPHeaderFields?["filename"] {
                 n = name
             }
+            
+            
             DispatchQueue.main.async {
                 Manager.add(skylink: Skylink(link: skylink, filename: n))
                 self.finito(skylink: skylink)

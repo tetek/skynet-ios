@@ -1,1 +1,2 @@
 github "Alamofire/Alamofire" "5.0.2"
+github "marmelroy/Zip" "1.1.0"

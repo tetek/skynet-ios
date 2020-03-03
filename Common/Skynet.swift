@@ -85,26 +85,23 @@ class Skynet: NSObject {
 //    }
 
     func finito(skylink: String) {
+        //Clipboard
         let pasteboard = UIPasteboard.general
         pasteboard.string = skylink
+        
+        //Notification
         let content = UNMutableNotificationContent()
-        content.title = "Skylink ready"
-        content.subtitle = "In the clipboard"
-        content.body = skylink
-
-        // 2
-//        let imageName = "applelogo"
-//        guard let imageURL = Bundle.main.url(forResource: imageName, withExtension: "png") else { return }
-//
-//        let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)
-//
-//        content.attachments = [attachment]
-//
-        // 3
+//        content.title = "Skynet"
+        content.subtitle = "Last uploaded skylink in the clipboard"
+        
+        let imageName = "AppIcon"
+        if let imageURL = Bundle.main.url(forResource: imageName, withExtension: "png") {
+            let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)
+            content.attachments = [attachment]
+        }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         let request = UNNotificationRequest(identifier: "notification.id.01", content: content, trigger: trigger)
 
-        // 4
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }

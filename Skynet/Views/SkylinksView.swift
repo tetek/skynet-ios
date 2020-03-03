@@ -65,31 +65,24 @@ struct SkylinkView: View {
 
 // List
 struct SkylinksView: View {
-    @State var skylinks: [Skylink] = Manager.load()
-
+//    @State var skylinks: [Skylink] = Manager.load()
+    @EnvironmentObject var manager: Manager
     var body: some View {
         NavigationView {
-            List(skylinks) { skylink in
+            List(manager.history) { skylink in
                 SkylinkView(skylink: skylink)
             }
             .navigationBarTitle(Text("Skylinks"))
-            .navigationBarItems(leading: Button(action: fetch) {
-                Text("Reload")
-                    .font(.title)
-                    .foregroundColor(.green)
-            }, trailing:
-            NavigationLink(destination: PortalsView()) {
-                Text("Portals")
-            }
+            .navigationBarItems(trailing:
+                NavigationLink(destination: PortalsView()) {
+                    Text("Portals")
+                }
             )
         }
     }
 
-    func portals() {
-    }
-
     func fetch() {
-        skylinks = Manager.load()
+        manager.reload()
     }
 }
 

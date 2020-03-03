@@ -116,7 +116,7 @@ extension Skynet: URLSessionTaskDelegate, URLSessionDataDelegate {
         if let skylink = json?["skylink"] as? String {
             if let name = task.originalRequest?.allHTTPHeaderFields?["filename"] {
                 DispatchQueue.main.async {
-                    Manager.add(skylink: Skylink(link: skylink, filename: name, timestamp: Date(), portalName: self.portal.name))
+                    Manager.shared.add(skylink: Skylink(link: skylink, filename: name, timestamp: Date(), portalName: self.portal.name))
                     self.finito(skylink: skylink)
                 }
             }

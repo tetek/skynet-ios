@@ -6,34 +6,50 @@
 //  Copyright © 2020 Wojciech Mandrysz. All rights reserved.
 //
 
+import Combine
 import Foundation
+import SwiftUI
 
-class Manager {
-    static var history: [Skylink] = load()
-    static let KeyForUserDefaults = "history_data"
-    static let AppGroupName = "group.tech.sia.skynet"
-    static let KeyPortal = "current_portal"
+let KeyHistory = "history_data"
+let AppGroupName = "group.tech.sia.skynet"
+let KeyPortal = "current_portal"
+let MaxHistory = 100
 
-    class func add(skylink: Skylink) {
+class Manager: ObservableObject {
+    static let shared = Manager()
+    private init() {}
+    @Published var history: [Skylink] = load()
+
+    func add(skylink: Skylink) {
         history.insert(skylink, at: 0)
-        save()
+        Manager.save(array: history)
     }
 
-    class func save() {
-        let data = history.map { try? JSONEncoder().encode($0) }
+    class func add(skylink: Skylink) {
+        save(array: load() + [skylink])
+    }
+
+    class func save(array: [Skylink]) {
+        let latest = array.prefix(upTo: min(MaxHistory, array.count))
+        let data = latest.map { try? JSONEncoder().encode($0) }
         let ud = UserDefaults(suiteName: AppGroupName)
-        ud?.set(data, forKey: KeyForUserDefaults)
+        ud?.set(data, forKey: KeyHistory)
         ud?.synchronize()
+    }
+
+    func reload() {
+        history = Manager.load()
     }
 
     class func load() -> [Skylink] {
         let ud = UserDefaults(suiteName: AppGroupName)
-        guard let encodedData = ud?.array(forKey: KeyForUserDefaults) as? [Data] else {
+        guard let encodedData = ud?.array(forKey: KeyHistory) as? [Data] else {
             return []
         }
 
         return encodedData.map { try! JSONDecoder().decode(Skylink.self, from: $0) }
     }
+
     static var currentPortal: Portal {
         get {
             let ud = UserDefaults(suiteName: AppGroupName)
@@ -47,7 +63,6 @@ class Manager {
             let ud = UserDefaults(suiteName: AppGroupName)
             ud?.set(data, forKey: KeyPortal)
             ud?.synchronize()
-        }        
+        }
     }
-
 }

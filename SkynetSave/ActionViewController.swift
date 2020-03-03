@@ -38,16 +38,17 @@ extension UIAlertController {
 class ActionViewController: UIViewController {
 //    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var currentPortal: UILabel!
-    
+
     var files: [URL] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentPortal.text = Manager.currentPortal.host
+        
         for item in extensionContext!.inputItems as! [NSExtensionItem] {
             for provider in item.attachments! {
-                if provider.hasItemConformingToTypeIdentifier(kUTTypeImage as String) {
-                    provider.loadItem(forTypeIdentifier: kUTTypeImage as String, options: nil, completionHandler: { imageURL, _ in
+                let types = [kUTTypeAudiovisualContent as String, kUTTypeImage as String]
+                
+                if let type = types.first(where: {provider.hasItemConformingToTypeIdentifier($0)}) {
+                    provider.loadItem(forTypeIdentifier: type, options: nil, completionHandler: { imageURL, _ in
                         if let imageURL = imageURL as? URL {
                             self.files += [imageURL]
                         }
@@ -64,7 +65,7 @@ class ActionViewController: UIViewController {
         extensionContext?.cancelRequest(withError: ErrorType.canceled)
     }
 
-    @IBAction func save() {        
+    @IBAction func save() {
         for url in files {
             if let data = try? Data(contentsOf: url) {
                 Skynet(portal: Manager.currentPortal).uploadInBackground(data: data, filename: url.lastPathComponent)
@@ -76,16 +77,32 @@ class ActionViewController: UIViewController {
 
 extension ActionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return files.count
+        return section == 0 ? 1 : files.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Reuse")
-        cell.textLabel?.text = files[indexPath.row].lastPathComponent
+        if indexPath.section == 0 {
+            let portal = Manager.currentPortal
+            cell.textLabel?.text = portal.name + " (\(portal.host))"
+        } else {
+            cell.textLabel?.text = files[indexPath.row].lastPathComponent
+        }
         return cell
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? "Selected files" : ""
+        return section == 0 ? "Portal" : "Selected files"
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 1 {
+            return "Downloading will begin in the background. You will be notified once upload is done. Open Skynet app to get history of uploads."
+        }
+        return nil
     }
 }

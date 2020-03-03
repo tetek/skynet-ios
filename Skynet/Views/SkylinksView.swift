@@ -24,7 +24,7 @@ struct SkylinkView: View {
     let skylink: Skylink
     @State var copied: Bool = false
     @State var showSafari = false
-
+    
     var body: some View {
         HStack(alignment: .top, spacing: CGFloat(3)) {
             VStack(alignment: .leading, spacing: CGFloat(3)) {
@@ -52,8 +52,6 @@ struct SkylinkView: View {
                     self.copied.toggle()
                 }
             }
-
-            print("Button action")
             let pb = UIPasteboard.general
             pb.string = Manager.currentPortal.downloadURL(skylink: self.skylink.link).absoluteString
         }

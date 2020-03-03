@@ -158,10 +158,8 @@
             filePath = "SkynetSave/ActionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "save()"
-            landmarkType = "7">
+            startingLineNumber = "109"
+            endingLineNumber = "109">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -174,10 +172,8 @@
             filePath = "SkynetSave/ActionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "save()"
-            landmarkType = "7">
+            startingLineNumber = "109"
+            endingLineNumber = "109">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -190,10 +186,8 @@
             filePath = "SkynetSave/ActionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "109"
+            endingLineNumber = "109">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -242,38 +236,6 @@
                   offsetFromSymbolStart = "64">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7F9E766A-FCA2-4496-9B83-1E2C968DAFBF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Common/Skynet.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "urlSession(_:task:didCompleteWithError:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5FD71B8C-AFCA-4C92-AD4E-4B0F7F24DE9F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Common/Skynet.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "urlSession(_:task:didCompleteWithError:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

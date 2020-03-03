@@ -1,5 +1,24 @@
 Sia Skynet iOS integration
 
 ---
-Initial plan to do photo/video sharing, maybe agregate the upload and do html website for album.
-For sure an option to choose/type in a portal.
+iOS Application and App Extensions which allow users to upload files from any other app in the system.
+Made during the Sia Skynet Hackhathon.
+
+---
+Abilities
+- select default portal
+- open sia://<skylink> with default portal
+- upload multiple files in background
+- collect uploaded skylinks
+- zip files together
+- copy / open skylinks
+
+---
+How to use the app
+
+1. Install the app
+2. Find a Skynet Portal you trust, or host one yourself
+3. Make that portal your default
+4. Whenever you find something you want to upload from your phone, pull up a Share menu, and choose "Save to Skynet".
+5. You will be notified when file get's uploaded, and skylink will be in your clipboard
+6. If you uploaded more files, open the Skynet app, long press on skylink to see the context menu.

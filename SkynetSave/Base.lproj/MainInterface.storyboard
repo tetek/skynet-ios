@@ -37,6 +37,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ObA-dk-sSI" id="Cjr-hC-JIX"/>
+                                    <outlet property="delegate" destination="ObA-dk-sSI" id="Z1h-m0-73y"/>
                                 </connections>
                             </tableView>
                         </subviews>

@@ -11,13 +11,12 @@ import Foundation
 import UIKit
 
 class Skynet: NSObject {
-    
     let portal: Portal
-    
+
     init(portal: Portal) {
         self.portal = portal
     }
-    
+
     var buffer = NSMutableData()
     var completion: (() -> Void)?
     var newsession: URLSession?
@@ -41,7 +40,7 @@ class Skynet: NSObject {
 
     func uploadInBackground(data: Data, filename: String? = nil) {
         let url = portal.newUploadURL()
-        
+
         let (fileURL, contentType) = tempFile(data: data, filename: filename)
 
         var request = URLRequest(url: url)
@@ -75,25 +74,59 @@ class Skynet: NSObject {
         return (fileURL, multipartFormData.contentType)
     }
 
-//    func download(skylink: String) {
-//        AF.download(portal + skylink).responseData { response in
-//            debugPrint(response)
-//            if let data = response.value {
-////                let image = UIImage(data: data)
-//            }
+    //Upload Many files at once - for later
+//    func uploadInBackground(datas: [Data], filenames: [String]? = nil) {
+//        let url = portal.newUploadURL()
+//
+//        let (fileURL, contentType) = tempFile(datas: datas, filenames: filenames)
+//
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        request.setValue("dir-from-ios", forHTTPHeaderField: "filename")
+//        request.setValue(contentType, forHTTPHeaderField: "Content-Type")
+//
+//        let task = session.uploadTask(with: request, fromFile: fileURL)
+//        task.resume()
+//    }
+//
+//    func tempFile(datas: [Data], filenames: [String]?) -> (URL, String) {
+//        let multipartFormData = MultipartFormData(fileManager: .default, boundary: "boundry")
+//        for i in 0 ... datas.count {
+//            let filename: String = filenames?[i] ?? "No name"
+//            multipartFormData.append(datas[i], withName: "file", fileName: filename)
 //        }
+////        for data in datas {
+////            multipartFormData.append(data, withName: "file", fileName: filename ?? "No name")
+////        }
+//
+//        let fileManager = FileManager.default
+//        let tempDirectoryURL = fileManager.temporaryDirectory
+//        let directoryURL = tempDirectoryURL.appendingPathComponent("org.alamofire.manager/multipart.form.data")
+//
+//        let fm = UUID().uuidString
+//        let fileURL = directoryURL.appendingPathComponent(fm)
+//
+//        try? fileManager.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
+//
+//        do {
+//            try multipartFormData.writeEncodedData(to: fileURL)
+//        } catch {
+//            // Cleanup after attempted write if it fails.
+//            try? fileManager.removeItem(at: fileURL)
+//        }
+//        return (fileURL, multipartFormData.contentType)
 //    }
 
     func finito(skylink: String) {
-        //Clipboard
+        // Clipboard
         let pasteboard = UIPasteboard.general
         pasteboard.string = skylink
-        
-        //Notification
+
+        // Notification
         let content = UNMutableNotificationContent()
 //        content.title = "Skynet"
         content.subtitle = "Last uploaded skylink in the clipboard"
-        
+
         let imageName = "AppIcon"
         if let imageURL = Bundle.main.url(forResource: imageName, withExtension: "png") {
             let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)

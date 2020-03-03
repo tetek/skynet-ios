@@ -21,6 +21,7 @@
 		7DAD958F240E96BA001B8440 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAD958B240E7A73001B8440 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DAD9590240E9729001B8440 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAD958B240E7A73001B8440 /* Zip.framework */; };
 		7DAD9591240E9729001B8440 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAD958B240E7A73001B8440 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DAD9592240ED8FF001B8440 /* PortalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEFE96D240D8973007444D4 /* PortalsView.swift */; };
 		7DB38556240C37A200F1E89B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB38553240C378900F1E89B /* Alamofire.framework */; };
 		7DB38557240C37A200F1E89B /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB38553240C378900F1E89B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DB38558240C37A600F1E89B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB38553240C378900F1E89B /* Alamofire.framework */; };
@@ -355,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DAD9592240ED8FF001B8440 /* PortalsView.swift in Sources */,
 				7D7BE198240B295F0079007C /* ActionViewController.swift in Sources */,
 				7DB38562240C7AEB00F1E89B /* Portal.swift in Sources */,
 				7DB3855F240C783F00F1E89B /* Skylink.swift in Sources */,

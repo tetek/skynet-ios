@@ -78,13 +78,13 @@ struct SkylinksView: View {
                 }
             )
 
-            .navigationBarItems(leading: VStack {
-                if manager.sessions < manager.expected {
-                    Text("Uploading \(manager.sessions) / \(manager.expected)")
-                        .foregroundColor(.red)
-                } else {
-                }
-            })
+//            .navigationBarItems(leading: VStack {
+//                if manager.sessions < manager.expected {
+//                    Text("Uploading \(manager.sessions) / \(manager.expected) f: \(manager.failed)")
+//                        .foregroundColor(.red)
+//                } else {
+//                }
+//            })
         }
     }
 }

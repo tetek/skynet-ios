@@ -18,8 +18,9 @@ let MaxHistory = 100
 
 class Manager: ObservableObject {
     static let shared = Manager()
-    @Published var sessions: Int = 0
-    var expected = 0
+//    @Published var sessions: Int = 0
+//    var expected = 0
+//    @Published var failed = 0
     private init() {}
     @Published var history: [Skylink] = load()
     private var queue = DispatchQueue(label: "your.queue.identifier")
@@ -27,12 +28,12 @@ class Manager: ObservableObject {
     func add(skylink: Skylink) {
         history.insert(skylink, at: 0)
         Manager.save(array: history)
-        queue.sync {
-            sessions += 1
-            if (sessions == expected) {
-                Manager.setExpectedDownloads(number: 0)
-            }
-        }                
+//        queue.sync {
+//            sessions += 1
+//            if (sessions == expected) {
+//                Manager.setExpectedDownloads(number: 0)
+//            }
+//        }
     }    
 
     class func save(array: [Skylink]) {
@@ -52,7 +53,7 @@ class Manager: ObservableObject {
     func reload() {
         history = Manager.load()
         let ud = UserDefaults(suiteName: AppGroupName)
-        expected = ud?.integer(forKey: KeyExpectedDownloads) ?? 0
+//        expected = ud?.integer(forKey: KeyExpectedDownloads) ?? 0
     }
 
     class func load() -> [Skylink] {

@@ -26,7 +26,7 @@ class Skynet: NSObject {
         let configuration = URLSessionConfiguration.background(withIdentifier: id)
         configuration.timeoutIntervalForRequest = 60
         configuration.sharedContainerIdentifier = "group.tech.sia.skynet"
-        newsession = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)        
+        newsession = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
     }
 
     var session: URLSession {
@@ -74,7 +74,7 @@ class Skynet: NSObject {
         return (fileURL, multipartFormData.contentType)
     }
 
-    //Upload Many files at once - for later
+    // Upload Many files at once - for later
 //    func uploadInBackground(datas: [Data], filenames: [String]? = nil) {
 //        let url = portal.newUploadURL()
 //
@@ -95,9 +95,9 @@ class Skynet: NSObject {
 //            let filename: String = filenames?[i] ?? "No name"
 //            multipartFormData.append(datas[i], withName: "file", fileName: filename)
 //        }
-////        for data in datas {
-////            multipartFormData.append(data, withName: "file", fileName: filename ?? "No name")
-////        }
+    ////        for data in datas {
+    ////            multipartFormData.append(data, withName: "file", fileName: filename ?? "No name")
+    ////        }
 //
 //        let fileManager = FileManager.default
 //        let tempDirectoryURL = fileManager.temporaryDirectory
@@ -141,6 +141,12 @@ class Skynet: NSObject {
 
 extension Skynet: URLSessionTaskDelegate, URLSessionDataDelegate {
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        if error != nil {
+//            DispatchQueue.main.async {
+//                Manager.shared.failed += 1
+//                print("ended with error")
+//            }
+        }
         let json = try? JSONSerialization.jsonObject(with: buffer as Data, options: []) as? [String: Any]
 
         if let skylink = json?["skylink"] as? String {
@@ -151,6 +157,19 @@ extension Skynet: URLSessionTaskDelegate, URLSessionDataDelegate {
                 }
             }
         }
+    }
+
+    func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
+//        if error != nil {
+//            DispatchQueue.main.async {
+//                Manager.shared.failed += 1
+//                print("invalid")
+//            }            
+//        }
+    }
+
+    func urlSession(_ session: URLSession, taskIsWaitingForConnectivity task: URLSessionTask) {
+        print("waiting for connectivity")
     }
 
     func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {

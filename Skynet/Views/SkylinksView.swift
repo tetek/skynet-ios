@@ -24,7 +24,7 @@ struct SkylinkView: View {
     let skylink: Skylink
     @State var copied: Bool = false
     @State var showSafari = false
-    
+
     var body: some View {
         HStack(alignment: .top, spacing: CGFloat(3)) {
             VStack(alignment: .leading, spacing: CGFloat(3)) {
@@ -43,17 +43,18 @@ struct SkylinkView: View {
         .onTapGesture {
             self.showSafari = true
         }
-        .onLongPressGesture {
-            withAnimation {
-                self.copied.toggle()
+        .contextMenu {
+            Button("Copy http link 🌍") {
+                let pb = UIPasteboard.general
+                pb.string = Manager.currentPortal.downloadURL(skylink: self.skylink.link).absoluteString
             }
-            Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { _ in
-                withAnimation {
-                    self.copied.toggle()
-                }
+            Button("Copy skylink 🆒") {
+                let pb = UIPasteboard.general
+                pb.string = self.skylink.skylink
             }
-            let pb = UIPasteboard.general
-            pb.string = Manager.currentPortal.downloadURL(skylink: self.skylink.link).absoluteString
+            Button("Open link 💻") {
+                self.showSafari = true
+            }
         }
         .sheet(isPresented: $showSafari) {
             SafariView(url: Manager.currentPortal.downloadURL(skylink: self.skylink.link))
@@ -63,8 +64,8 @@ struct SkylinkView: View {
 
 // List
 struct SkylinksView: View {
-//    @State var skylinks: [Skylink] = Manager.load()
     @EnvironmentObject var manager: Manager
+
     var body: some View {
         NavigationView {
             List(manager.history) { skylink in
@@ -76,11 +77,15 @@ struct SkylinksView: View {
                     Text("Portals")
                 }
             )
-        }
-    }
 
-    func fetch() {
-        manager.reload()
+            .navigationBarItems(leading: VStack {
+                if manager.sessions < manager.expected {
+                    Text("Uploading \(manager.sessions) / \(manager.expected)")
+                        .foregroundColor(.red)
+                } else {
+                }
+            })
+        }
     }
 }
 

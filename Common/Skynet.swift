@@ -26,7 +26,7 @@ class Skynet: NSObject {
         let configuration = URLSessionConfiguration.background(withIdentifier: id)
         configuration.timeoutIntervalForRequest = 60
         configuration.sharedContainerIdentifier = "group.tech.sia.skynet"
-        newsession = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+        newsession = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)        
     }
 
     var session: URLSession {

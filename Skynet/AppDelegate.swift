@@ -8,29 +8,22 @@
 
 import UIKit
 import Alamofire
-var skynet: Skynet?
+import SafariServices
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        Skynet().upload(data: "Hello elo".data(using: .utf8)!) { (s, sk) in
-//            print("eki")
-//        }
-//        Manager.add(skylink: Skylink(link: "HEJA", filename: "kurwo"))        
         UNUserNotificationCenter.current().requestAuthorization(options: UNAuthorizationOptions.alert) { (success, error) in
             
         }
         return true
     }
     
-    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
-        skynet = Skynet(portal: Manager.currentPortal)
-        skynet?.resumeSession(id: identifier, completionHandler: completionHandler)
-//        DispatchQueue.main.async {
-////           completionHandler()
-//        }
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {        
+        Skynet(portal: Manager.currentPortal).resumeSession(id: identifier, completionHandler: completionHandler)
     }
+  
     
     // MARK: UISceneSession Lifecycle
 

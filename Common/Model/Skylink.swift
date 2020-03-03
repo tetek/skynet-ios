@@ -19,6 +19,10 @@ struct Skylink: Identifiable, Codable {
             return link
         }
     }
+    var skylink: String {
+        return "sia://" + link
+    }
+    
     init(link: String, filename: String, timestamp: Date, portalName: String) {
         self.link = link
         self.filename = filename

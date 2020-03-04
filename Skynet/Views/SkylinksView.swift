@@ -77,14 +77,6 @@ struct SkylinksView: View {
                     Text("Portals")
                 }
             )
-
-            .navigationBarItems(leading: VStack {
-                if manager.sessions < manager.expected {
-                    Text("Uploading \(manager.sessions) / \(manager.expected)")
-                        .foregroundColor(.red)
-                } else {
-                }
-            })
         }
     }
 }

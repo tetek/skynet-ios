@@ -57,6 +57,7 @@ struct PortalsView: View {
                 }
             }
         }
+
         .listStyle(GroupedListStyle())
         .navigationBarTitle("Portals")
 
@@ -64,8 +65,6 @@ struct PortalsView: View {
             NavigationLink(destination: AddPortalView()) {
                 Image(systemName: "plus.circle.fill").font(Font.system(.largeTitle))
         })
-        
-    
     }
 
     func delete(at offsets: IndexSet) {

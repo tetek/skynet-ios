@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let url = urlContext.url
             if url.absoluteString.hasPrefix("sia") {
                 let skylink = String(url.absoluteString.dropFirst("sia://".count))
-                return Manager.currentPortal.downloadURL(skylink: skylink)
+                return Manager.shared.current.downloadURL(skylink: skylink)
             }
         }
         return nil
@@ -38,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UIApplication.shared.open(url, options: [:]) { _ in }
         }
         // Use a UIHostingController as window root view controller.
-        let contentView = SkylinksView().environmentObject(Manager.shared)
+        let contentView = SkylinksView().environmentObject(Manager.shared).environmentObject(MyPortals.shared)
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView)

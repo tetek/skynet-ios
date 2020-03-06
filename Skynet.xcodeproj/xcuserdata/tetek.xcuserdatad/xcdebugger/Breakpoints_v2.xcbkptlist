@@ -87,47 +87,75 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A41CAA0D-C18B-4837-943D-A73F58346B1C"
-            shouldBeEnabled = "No"
+            uuid = "5EC4683F-8121-4452-9FFD-5778BEC3DD47"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Skynet/MyPortals.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25A01FB3-CA59-4F8C-B388-75C73098C962"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Skynet/Views/PortalsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "80"
+            endingLineNumber = "80">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3EFB3CFD-7AB9-4737-85EF-9D4790D9A834"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Skynet/Views/PortalsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "A41CAA0D-C18B-4837-943D-A73F58346B1C - 2b230923d370802e"
-                  shouldBeEnabled = "No"
+                  uuid = "3EFB3CFD-7AB9-4737-85EF-9D4790D9A834 - 5fa7c79a86ca2481"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Section&lt;SwiftUI.Text, Skynet.PortalView, SwiftUI.EmptyView&gt;, SwiftUI.Section&lt;SwiftUI.Text, SwiftUI.ForEach&lt;Swift.Array&lt;Skynet.Portal&gt;, Swift.String, Skynet.PortalView&gt;, SwiftUI.EmptyView&gt;)&gt; in Skynet.PortalsView.body.getter : some"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Section&lt;SwiftUI.Text, Skynet.PortalView, SwiftUI.EmptyView&gt;, Swift.Optional&lt;SwiftUI.Section&lt;SwiftUI.Text, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.DynamicViewContent.onDelete(perform: Swift.Optional&lt;(Foundation.IndexSet) -&gt; ()&gt;) -&gt; some&gt;&gt;.0, SwiftUI.EmptyView&gt;&gt;, SwiftUI.Section&lt;SwiftUI.Text, SwiftUI.ForEach&lt;Swift.Array&lt;Skynet.Portal&gt;, Swift.String, Skynet.PortalView&gt;, SwiftUI.EmptyView&gt;)&gt; in Skynet.PortalsView.body.getter : some"
                   moduleName = "Skynet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tetek/Code/binarka/sia/Skynet/Skynet/Views/PortalsView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "392">
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "428">
                </Location>
                <Location
-                  uuid = "A41CAA0D-C18B-4837-943D-A73F58346B1C - 70bcffb7505656ec"
-                  shouldBeEnabled = "No"
+                  uuid = "3EFB3CFD-7AB9-4737-85EF-9D4790D9A834 - c71586c774ab4735"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; Skynet.PortalView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Section&lt;SwiftUI.Text, Skynet.PortalView, SwiftUI.EmptyView&gt;, SwiftUI.Section&lt;SwiftUI.Text, SwiftUI.ForEach&lt;Swift.Array&lt;Skynet.Portal&gt;, Swift.String, Skynet.PortalView&gt;, SwiftUI.EmptyView&gt;)&gt; in Skynet.PortalsView.body.getter : some"
+                  symbolName = "closure #1 () -&gt; Skynet.PortalView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Section&lt;SwiftUI.Text, Skynet.PortalView, SwiftUI.EmptyView&gt;, Swift.Optional&lt;SwiftUI.Section&lt;SwiftUI.Text, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.DynamicViewContent.onDelete(perform: Swift.Optional&lt;(Foundation.IndexSet) -&gt; ()&gt;) -&gt; some&gt;&gt;.0, SwiftUI.EmptyView&gt;&gt;, SwiftUI.Section&lt;SwiftUI.Text, SwiftUI.ForEach&lt;Swift.Array&lt;Skynet.Portal&gt;, Swift.String, Skynet.PortalView&gt;, SwiftUI.EmptyView&gt;)&gt; in Skynet.PortalsView.body.getter : some"
                   moduleName = "Skynet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tetek/Code/binarka/sia/Skynet/Skynet/Views/PortalsView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "64">
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>

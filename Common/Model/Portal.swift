@@ -12,8 +12,8 @@ import SwiftUI
 struct Portal: Identifiable, Codable {
     
     var id: String { return host }
-    let host: String // = "https://siasky.net/"
-    let uploadPath: String // =/// "skynet/skyfile/"
+    let host: String
+    let uploadPath: String
     let downloadPath: String
     let name: String
     
@@ -27,7 +27,6 @@ struct Portal: Identifiable, Codable {
     
     func newUploadURL() -> URL {
         let uuid = UUID().uuidString
-//        return URL(string: host + uploadPath + "/" + uuid)!
         return URL(string: host)!.appendingPathComponent(uploadPath).appendingPathComponent(uuid)
     }
     

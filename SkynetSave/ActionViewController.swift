@@ -80,12 +80,12 @@ class ActionViewController: UIViewController {
                 print(progress)
             })
             if let data = try? Data(contentsOf: zipFilePath) {               
-                Skynet(portal: Manager.currentPortal).uploadInBackground(data: data, filename: zipFilePath.lastPathComponent)
+                Skynet(portal: Manager.shared.current).uploadInBackground(data: data, filename: zipFilePath.lastPathComponent)
             }
         } else {
             for url in files {
                 if let data = try? Data(contentsOf: url) {
-                    Skynet(portal: Manager.currentPortal).uploadInBackground(data: data, filename: url.lastPathComponent)
+                    Skynet(portal: Manager.shared.current).uploadInBackground(data: data, filename: url.lastPathComponent)
                 }
             }
         }

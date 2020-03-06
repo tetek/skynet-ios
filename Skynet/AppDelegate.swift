@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {        
-        Skynet(portal: Manager.currentPortal).resumeSession(id: identifier, completionHandler: completionHandler)
+        Skynet(portal: Manager.shared.current).resumeSession(id: identifier, completionHandler: completionHandler)
     }
   
     

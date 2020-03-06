@@ -20,7 +20,8 @@ class Manager: ObservableObject {
     static let shared = Manager()
     private init() {}
     @Published var history: [Skylink] = load()
-
+    @Published var current: Portal = currentPortal
+    
     func add(skylink: Skylink) {
         history.insert(skylink, at: 0)
         Manager.save(array: history)
@@ -36,6 +37,7 @@ class Manager: ObservableObject {
 
     func reload() {
         history = Manager.load()
+        current = Manager.currentPortal
     }
 
     class func load() -> [Skylink] {

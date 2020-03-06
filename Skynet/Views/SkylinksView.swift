@@ -46,7 +46,7 @@ struct SkylinkView: View {
         .contextMenu {
             Button("Copy http link 🌍") {
                 let pb = UIPasteboard.general
-                pb.string = Manager.currentPortal.downloadURL(skylink: self.skylink.link).absoluteString
+                pb.string = Manager.shared.current.downloadURL(skylink: self.skylink.link).absoluteString
             }
             Button("Copy skylink 🆒") {
                 let pb = UIPasteboard.general
@@ -57,7 +57,7 @@ struct SkylinkView: View {
             }
         }
         .sheet(isPresented: $showSafari) {
-            SafariView(url: Manager.currentPortal.downloadURL(skylink: self.skylink.link))
+            SafariView(url: Manager.shared.current.downloadURL(skylink: self.skylink.link))
         }
     }
 }
@@ -65,7 +65,7 @@ struct SkylinkView: View {
 // List
 struct SkylinksView: View {
     @EnvironmentObject var manager: Manager
-
+    
     var body: some View {
         NavigationView {
             List(manager.history) { skylink in
@@ -74,10 +74,10 @@ struct SkylinksView: View {
             .navigationBarTitle(Text("Skylinks"))
             .navigationBarItems(trailing:
                 NavigationLink(destination: PortalsView()) {
-                    Text("Portals")
+                    Image(systemName: "hexagon.fill").font(Font.system(.largeTitle))
                 }
             )
-        }
+        }.accentColor(Color(red: 0x57/0xFF, green: 0xb5/0xFF, blue: 0x60/0xFF))
     }
 }
 

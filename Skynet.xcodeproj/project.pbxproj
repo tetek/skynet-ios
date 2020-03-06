@@ -18,19 +18,19 @@
 		7D7BE19F240B295F0079007C /* SkynetSave.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7D7BE193240B295F0079007C /* SkynetSave.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7D7BE1BE240C0E060079007C /* Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE1BD240C0E060079007C /* Portal.swift */; };
 		7DAD958E240E96BA001B8440 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAD958B240E7A73001B8440 /* Zip.framework */; };
-		7DAD958F240E96BA001B8440 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAD958B240E7A73001B8440 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DAD9590240E9729001B8440 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAD958B240E7A73001B8440 /* Zip.framework */; };
-		7DAD9591240E9729001B8440 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAD958B240E7A73001B8440 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DAD9592240ED8FF001B8440 /* PortalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEFE96D240D8973007444D4 /* PortalsView.swift */; };
 		7DB38556240C37A200F1E89B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB38553240C378900F1E89B /* Alamofire.framework */; };
-		7DB38557240C37A200F1E89B /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB38553240C378900F1E89B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DB38558240C37A600F1E89B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB38553240C378900F1E89B /* Alamofire.framework */; };
-		7DB38559240C37A600F1E89B /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB38553240C378900F1E89B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DB3855E240C783F00F1E89B /* Skylink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3855D240C783F00F1E89B /* Skylink.swift */; };
 		7DB3855F240C783F00F1E89B /* Skylink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3855D240C783F00F1E89B /* Skylink.swift */; };
 		7DB38562240C7AEB00F1E89B /* Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE1BD240C0E060079007C /* Portal.swift */; };
 		7DB38564240C7C0A00F1E89B /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB38563240C7C0A00F1E89B /* Manager.swift */; };
 		7DB38565240C7C0A00F1E89B /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB38563240C7C0A00F1E89B /* Manager.swift */; };
+		7DC3C2072411AABC005BE46E /* MyPortals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C2062411AABC005BE46E /* MyPortals.swift */; };
+		7DC3C2092411ABD9005BE46E /* AddPortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C2082411ABD9005BE46E /* AddPortalView.swift */; };
+		7DC3C20A2411AE8B005BE46E /* AddPortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C2082411ABD9005BE46E /* AddPortalView.swift */; };
+		7DC3C20B2411B0D5005BE46E /* MyPortals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C2062411AABC005BE46E /* MyPortals.swift */; };
 		7DEB68EA240C1140008DBAC8 /* SkylinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB68E9240C1140008DBAC8 /* SkylinksView.swift */; };
 		7DEB68F0240C22FF008DBAC8 /* Skynet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE17A240B16D30079007C /* Skynet.swift */; };
 		7DEB68F1240C2329008DBAC8 /* Skynet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE17A240B16D30079007C /* Skynet.swift */; };
@@ -55,8 +55,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7DAD9591240E9729001B8440 /* Zip.framework in Embed Frameworks */,
-				7DB38557240C37A200F1E89B /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,18 +68,6 @@
 				7D7BE19F240B295F0079007C /* SkynetSave.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7D7BE1BC240B3D620079007C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7DAD958F240E96BA001B8440 /* Zip.framework in Embed Frameworks */,
-				7DB38559240C37A600F1E89B /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -105,6 +91,8 @@
 		7DB38553240C378900F1E89B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7DB3855D240C783F00F1E89B /* Skylink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skylink.swift; sourceTree = "<group>"; };
 		7DB38563240C7C0A00F1E89B /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		7DC3C2062411AABC005BE46E /* MyPortals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortals.swift; sourceTree = "<group>"; };
+		7DC3C2082411ABD9005BE46E /* AddPortalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPortalView.swift; sourceTree = "<group>"; };
 		7DEB68E9240C1140008DBAC8 /* SkylinksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkylinksView.swift; sourceTree = "<group>"; };
 		7DEB68EC240C1602008DBAC8 /* Skynet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Skynet.entitlements; sourceTree = "<group>"; };
 		7DEB68EE240C17BE008DBAC8 /* SkynetSave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkynetSave.entitlements; sourceTree = "<group>"; };
@@ -159,6 +147,7 @@
 			children = (
 				7DED8084240D211F00CC4F4B /* Helpers */,
 				7DB38563240C7C0A00F1E89B /* Manager.swift */,
+				7DC3C2062411AABC005BE46E /* MyPortals.swift */,
 				7DB38560240C79B200F1E89B /* Views */,
 				7D7BE15F240B0E5E0079007C /* AppDelegate.swift */,
 				7D7BE161240B0E5E0079007C /* SceneDelegate.swift */,
@@ -205,6 +194,7 @@
 			children = (
 				7DEB68E9240C1140008DBAC8 /* SkylinksView.swift */,
 				7DEFE96D240D8973007444D4 /* PortalsView.swift */,
+				7DC3C2082411ABD9005BE46E /* AddPortalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +237,7 @@
 				7D7BE15A240B0E5E0079007C /* Resources */,
 				7D7BE177240B129C0079007C /* Embed Frameworks */,
 				7D7BE18E240B26EB0079007C /* Embed App Extensions */,
+				7DC3C20524119ED0005BE46E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -265,7 +256,6 @@
 				7D7BE18F240B295F0079007C /* Sources */,
 				7D7BE190240B295F0079007C /* Frameworks */,
 				7D7BE191240B295F0079007C /* Resources */,
-				7D7BE1BC240B3D620079007C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,16 +325,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7DC3C20524119ED0005BE46E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Zip.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D7BE158240B0E5E0079007C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7D7BE160240B0E5E0079007C /* AppDelegate.swift in Sources */,
+				7DC3C2072411AABC005BE46E /* MyPortals.swift in Sources */,
 				7DEB68F0240C22FF008DBAC8 /* Skynet.swift in Sources */,
 				7D7BE1BE240C0E060079007C /* Portal.swift in Sources */,
 				7DEB68EA240C1140008DBAC8 /* SkylinksView.swift in Sources */,
 				7DB38564240C7C0A00F1E89B /* Manager.swift in Sources */,
+				7DC3C2092411ABD9005BE46E /* AddPortalView.swift in Sources */,
 				7D7BE162240B0E5E0079007C /* SceneDelegate.swift in Sources */,
 				7DEFE96E240D8973007444D4 /* PortalsView.swift in Sources */,
 				7DED8086240D212F00CC4F4B /* LocalizedTimeAgo.swift in Sources */,
@@ -357,9 +371,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DAD9592240ED8FF001B8440 /* PortalsView.swift in Sources */,
+				7DC3C20A2411AE8B005BE46E /* AddPortalView.swift in Sources */,
 				7D7BE198240B295F0079007C /* ActionViewController.swift in Sources */,
 				7DB38562240C7AEB00F1E89B /* Portal.swift in Sources */,
 				7DB3855F240C783F00F1E89B /* Skylink.swift in Sources */,
+				7DC3C20B2411B0D5005BE46E /* MyPortals.swift in Sources */,
 				7DEB68F1240C2329008DBAC8 /* Skynet.swift in Sources */,
 				7DB38565240C7C0A00F1E89B /* Manager.swift in Sources */,
 			);
@@ -524,6 +540,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Skynet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,6 +567,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Skynet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

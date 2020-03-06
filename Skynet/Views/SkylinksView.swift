@@ -65,19 +65,33 @@ struct SkylinkView: View {
 // List
 struct SkylinksView: View {
     @EnvironmentObject var manager: Manager
-    
+
     var body: some View {
         NavigationView {
-            List(manager.history) { skylink in
-                SkylinkView(skylink: skylink)
+            VStack {
+                if manager.history.count == 0 {
+                    Text("Your uploaded files will be visible on this list. You can start uploading from any place in iOS, using 'Save to Skynet' from a share sheet.").foregroundColor(Color(red: 0x57 / 0xFF, green: 0xB5 / 0xFF, blue: 0x60 / 0xFF)).font(.custom("Menlo", size: 13)).padding(10)
+                } else if manager.history.count == 1 {
+                    Text("Tap on the filename to open skylink in the current portal. Press and hold to see context menu").foregroundColor(Color(red: 0x57 / 0xFF, green: 0xB5 / 0xFF, blue: 0x60 / 0xFF)).font(.custom("Menlo", size: 13)).padding(10)
+                } else if manager.history.count == 2 {
+                    Text("Enjoy the Skynet").foregroundColor(Color(red: 0x57 / 0xFF, green: 0xB5 / 0xFF, blue: 0x60 / 0xFF)).font(.custom("Menlo", size: 13)).padding(10)
+                }
+                List {
+                    ForEach(manager.history) { skylink in
+                        SkylinkView(skylink: skylink)
+                    }
+                }
             }
+//            List(manager.history) { skylink in
+//                SkylinkView(skylink: skylink)
+//            }
             .navigationBarTitle(Text("Skylinks"))
             .navigationBarItems(trailing:
                 NavigationLink(destination: PortalsView()) {
                     Image(systemName: "hexagon.fill").font(Font.system(.largeTitle))
                 }
             )
-        }.accentColor(Color(red: 0x57/0xFF, green: 0xb5/0xFF, blue: 0x60/0xFF))
+        }.accentColor(Color(red: 0x57 / 0xFF, green: 0xB5 / 0xFF, blue: 0x60 / 0xFF))
     }
 }
 

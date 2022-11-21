@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D5015E8292B7FEE00CD3EA1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7D5015E7292B7FEE00CD3EA1 /* Alamofire */; };
+		7D5015EB292B7FFB00CD3EA1 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 7D5015EA292B7FFB00CD3EA1 /* Zip */; };
+		7D5015ED292B801400CD3EA1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7D5015EC292B801400CD3EA1 /* Alamofire */; };
+		7D5015EF292B801400CD3EA1 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 7D5015EE292B801400CD3EA1 /* Zip */; };
 		7D7BE160240B0E5E0079007C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE15F240B0E5E0079007C /* AppDelegate.swift */; };
 		7D7BE162240B0E5E0079007C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE161240B0E5E0079007C /* SceneDelegate.swift */; };
 		7D7BE166240B0E600079007C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D7BE165240B0E600079007C /* Assets.xcassets */; };
@@ -17,11 +21,7 @@
 		7D7BE19B240B295F0079007C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D7BE199240B295F0079007C /* MainInterface.storyboard */; };
 		7D7BE19F240B295F0079007C /* SkynetSave.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7D7BE193240B295F0079007C /* SkynetSave.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7D7BE1BE240C0E060079007C /* Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE1BD240C0E060079007C /* Portal.swift */; };
-		7DAD958E240E96BA001B8440 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAD958B240E7A73001B8440 /* Zip.framework */; };
-		7DAD9590240E9729001B8440 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAD958B240E7A73001B8440 /* Zip.framework */; };
 		7DAD9592240ED8FF001B8440 /* PortalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEFE96D240D8973007444D4 /* PortalsView.swift */; };
-		7DB38556240C37A200F1E89B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB38553240C378900F1E89B /* Alamofire.framework */; };
-		7DB38558240C37A600F1E89B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB38553240C378900F1E89B /* Alamofire.framework */; };
 		7DB3855E240C783F00F1E89B /* Skylink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3855D240C783F00F1E89B /* Skylink.swift */; };
 		7DB3855F240C783F00F1E89B /* Skylink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3855D240C783F00F1E89B /* Skylink.swift */; };
 		7DB38562240C7AEB00F1E89B /* Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE1BD240C0E060079007C /* Portal.swift */; };
@@ -87,8 +87,6 @@
 		7D7BE19A240B295F0079007C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7D7BE19C240B295F0079007C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D7BE1BD240C0E060079007C /* Portal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portal.swift; sourceTree = "<group>"; };
-		7DAD958B240E7A73001B8440 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/iOS/Zip.framework; sourceTree = "<group>"; };
-		7DB38553240C378900F1E89B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7DB3855D240C783F00F1E89B /* Skylink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skylink.swift; sourceTree = "<group>"; };
 		7DB38563240C7C0A00F1E89B /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		7DC3C2062411AABC005BE46E /* MyPortals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortals.swift; sourceTree = "<group>"; };
@@ -105,8 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DAD9590240E9729001B8440 /* Zip.framework in Frameworks */,
-				7DB38556240C37A200F1E89B /* Alamofire.framework in Frameworks */,
+				7D5015EB292B7FFB00CD3EA1 /* Zip in Frameworks */,
+				7D5015E8292B7FEE00CD3EA1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,8 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DAD958E240E96BA001B8440 /* Zip.framework in Frameworks */,
-				7DB38558240C37A600F1E89B /* Alamofire.framework in Frameworks */,
+				7D5015EF292B801400CD3EA1 /* Zip in Frameworks */,
+				7D5015ED292B801400CD3EA1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,8 +181,6 @@
 		7D7BE1B9240B3D620079007C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7DAD958B240E7A73001B8440 /* Zip.framework */,
-				7DB38553240C378900F1E89B /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -237,7 +233,6 @@
 				7D7BE15A240B0E5E0079007C /* Resources */,
 				7D7BE177240B129C0079007C /* Embed Frameworks */,
 				7D7BE18E240B26EB0079007C /* Embed App Extensions */,
-				7DC3C20524119ED0005BE46E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -245,6 +240,10 @@
 				7D7BE19E240B295F0079007C /* PBXTargetDependency */,
 			);
 			name = Skynet;
+			packageProductDependencies = (
+				7D5015E7292B7FEE00CD3EA1 /* Alamofire */,
+				7D5015EA292B7FFB00CD3EA1 /* Zip */,
+			);
 			productName = Skynet;
 			productReference = 7D7BE15C240B0E5E0079007C /* Skynet.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +261,10 @@
 			dependencies = (
 			);
 			name = SkynetSave;
+			packageProductDependencies = (
+				7D5015EC292B801400CD3EA1 /* Alamofire */,
+				7D5015EE292B801400CD3EA1 /* Zip */,
+			);
 			productName = SkynetSave;
 			productReference = 7D7BE193240B295F0079007C /* SkynetSave.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -293,6 +296,10 @@
 				Base,
 			);
 			mainGroup = 7D7BE153240B0E5E0079007C;
+			packageReferences = (
+				7D5015E6292B7FEE00CD3EA1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7D5015E9292B7FFB00CD3EA1 /* XCRemoteSwiftPackageReference "Zip" */,
+			);
 			productRefGroup = 7D7BE15D240B0E5E0079007C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,28 +331,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7DC3C20524119ED0005BE46E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Zip.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D7BE158240B0E5E0079007C /* Sources */ = {
@@ -662,6 +647,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D5015E6292B7FEE00CD3EA1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		7D5015E9292B7FFB00CD3EA1 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D5015E7292B7FEE00CD3EA1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D5015E6292B7FEE00CD3EA1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7D5015EA292B7FFB00CD3EA1 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D5015E9292B7FFB00CD3EA1 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+		7D5015EC292B801400CD3EA1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D5015E6292B7FEE00CD3EA1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7D5015EE292B801400CD3EA1 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D5015E9292B7FFB00CD3EA1 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D7BE154240B0E5E0079007C /* Project object */;
 }
